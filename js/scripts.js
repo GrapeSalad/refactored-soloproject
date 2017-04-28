@@ -1,9 +1,9 @@
-//Business logic
+//BUSINESS LOGIC
 var quizTotal = function(q1Answer, q2Answer, q3Answer, q4Answer, q5Answer, q6Answer, q7Answer, q8Answer) {
   return (q1Answer + q2Answer + q3Answer + q4Answer + q5Answer + q6Answer + q7Answer + q8Answer);
 };
 
-//UI logic
+//UI lOGIC
 $(document).ready(function() {
   $("div#output").hide();
   $(document).submit(function(event) {
@@ -61,13 +61,6 @@ $(document).ready(function() {
     // console.log(firstName + " " + lastName, typeof(firstName));
     // console.log(userHome, typeof(userHome));
     // console.log(q1Answer, typeof(q1Answer));
-    // console.log(q2Answer, typeof(q2Answer));
-    // console.log(q3Answer, typeof(q3Answer));
-    // console.log(q4Answer, typeof(q4Answer));
-    // console.log(q5Answer, typeof(q5Answer));
-    // console.log(q6Answer, typeof(q6Answer));
-    // console.log(q7Answer, typeof(q7Answer));
-    // console.log(q8Answer, typeof(q8Answer));
     // console.log("Total points from quiz: ", result, typeof(result));
 //Trying something new with reloading page
     setTimeout(function() {
