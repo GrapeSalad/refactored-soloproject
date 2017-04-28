@@ -37,6 +37,15 @@ h1 {
   border-radius: 20px;
 }
 
+#questions .row:nth-child(1n+1) {
+  border-bottom: 1px dotted #000;
+  padding-top: 3px;
+}
+
+#questions .row:last-child {
+  border-bottom: none;
+}
+
 button.btn {
   margin: 10px 45% 0;
 }
@@ -48,6 +57,10 @@ button.btn {
 #output {
   padding: 5px;
   background-color: rgba(144, 232, 177, 0.8);
+}
+
+img {
+  margin: 0 0 10px 10%;
 }
 
 li {

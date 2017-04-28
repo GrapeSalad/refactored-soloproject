@@ -9,17 +9,14 @@ $(document).ready(function() {
   $(document).submit(function(event) {
     event.preventDefault();
     $("div#output").slideDown();
-    $("#result1").hide();
-    $("#result2").hide();
-    $("#result3").hide();
-    $("#result4").hide();
-    $("#result5").hide();
+    $(".result").hide();
     $("#submitBtn").hide();
     $("#output").addClass("strobe");
 
 //INPUT
     var firstName = $("input#firstName").val();
     var lastName = $("input#lastName").val();
+    var userHome = $("input#city").val().toLowerCase();
     var q1Answer = parseInt($("select#q1").val());
     var q2Answer = parseInt($("select#q2").val());
     var q3Answer = parseInt($("select#q3").val());
@@ -32,7 +29,7 @@ $(document).ready(function() {
     var result = quizTotal(q1Answer, q2Answer, q3Answer, q4Answer, q5Answer, q6Answer, q7Answer, q8Answer);
 
     var chosenPath = result;
-
+//SHOW RESULT BASED ON USER POINTS
     if (chosenPath >= 8 && chosenPath <= 14) {
       $("#result1").show();
     }
@@ -48,7 +45,13 @@ $(document).ready(function() {
     else {
       $("#result5").show();
     }
-
+//SHOW IF COURSES ARE AVAILABLE NEAR USER
+    if (userHome === "portland" || userHome === "seattle") {
+      $("span#cityOutput").text("You will not have to commute far!");
+    }
+    else {
+      $("span#cityOutput").text("You may have to move or commute quite a ways in order to attend class.");
+    }
 
 //OUTPUT
     $("span#personalOutput").text(firstName + " " + lastName + ", it looks like you should pursue: ");
@@ -56,6 +59,7 @@ $(document).ready(function() {
 
 //ERROR CHECKING
     // console.log(firstName + " " + lastName, typeof(firstName));
+    // console.log(userHome, typeof(userHome));
     // console.log(q1Answer, typeof(q1Answer));
     // console.log(q2Answer, typeof(q2Answer));
     // console.log(q3Answer, typeof(q3Answer));

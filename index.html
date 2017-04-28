@@ -32,7 +32,16 @@
                 <input id="lastName" class="form-control" type="text">
               </div>
             </div>
+            <div class="row">
+              <div class="col-xs-6">
+                  <label for="city">What city do you live in?</label>
+              </div>
+              <div class="col-xs-6">
+                <input id="city" class="form-control" type="text">
+              </div>
+            </div>
           </div>
+          <h3>How strongly do you agree with the following sentiments?</h3>
           <div id="questions">
             <div class="row">
               <div class="col-xs-6">
@@ -40,8 +49,8 @@
               </div>
               <div class="col-xs-6">
                 <select class="form-control" id="q1">
-                  <option value="1">Totes Agree</option>
-                  <option value="2">Agree-ish</option>
+                  <option value="1">What is this, a joke? YAH DUH</option>
+                  <option value="2">Moderately strongish with a touch of yes-ish</option>
                   <option value="3">Eh, you know?</option>
                   <option value="4">Pretty much no, not really. Maybe kinda sometimes.</option>
                   <option value="5">Super Ultra, don't even get me started, nope</option>
@@ -54,8 +63,8 @@
               </div>
               <div class="col-xs-6">
                 <select class="form-control" id="q2">
-                  <option value="1">Totes Agree</option>
-                  <option value="2">Agree-ish</option>
+                  <option value="1">What is this, a joke? YAH DUH</option>
+                  <option value="2">Moderately strongish with a touch of yes-ish</option>
                   <option value="3">Eh, you know?</option>
                   <option value="4">Pretty much no, not really. Maybe kinda sometimes.</option>
                   <option value="5">Super Ultra, don't even get me started, nope</option>
@@ -68,8 +77,8 @@
               </div>
               <div class="col-xs-6">
                 <select class="form-control" id="q3">
-                  <option value="1">Totes Agree</option>
-                  <option value="2">Agree-ish</option>
+                  <option value="1">What is this, a joke? YAH DUH</option>
+                  <option value="2">Moderately strongish with a touch of yes-ish</option>
                   <option value="3">Eh, you know?</option>
                   <option value="4">Pretty much no, not really. Maybe kinda sometimes.</option>
                   <option value="5">Super Ultra, don't even get me started, nope</option>
@@ -82,8 +91,8 @@
               </div>
               <div class="col-xs-6">
                 <select class="form-control" id="q4">
-                  <option value="1">Totes Agree</option>
-                  <option value="2">Agree-ish</option>
+                  <option value="1">What is this, a joke? YAH DUH</option>
+                  <option value="2">Moderately strongish with a touch of yes-ish</option>
                   <option value="3">Eh, you know?</option>
                   <option value="4">Pretty much no, not really. Maybe kinda sometimes.</option>
                   <option value="5">Super Ultra, don't even get me started, nope</option>
@@ -96,8 +105,8 @@
               </div>
               <div class="col-xs-6">
                 <select class="form-control" id="q5">
-                  <option value="1">Totes Agree</option>
-                  <option value="2">Agree-ish</option>
+                  <option value="1">What is this, a joke? YAH DUH</option>
+                  <option value="2">Moderately strongish with a touch of yes-ish</option>
                   <option value="3">Eh, you know?</option>
                   <option value="4">Pretty much no, not really. Maybe kinda sometimes.</option>
                   <option value="5">Super Ultra, don't even get me started, nope</option>
@@ -110,8 +119,8 @@
               </div>
               <div class="col-xs-6">
                 <select class="form-control" id="q6">
-                  <option value="1">Totes Agree</option>
-                  <option value="2">Agree-ish</option>
+                  <option value="1">What is this, a joke? YAH DUH</option>
+                  <option value="2">Moderately strongish with a touch of yes-ish</option>
                   <option value="3">Eh, you know?</option>
                   <option value="4">Pretty much no, not really. Maybe kinda sometimes.</option>
                   <option value="5">Super Ultra, don't even get me started, nope</option>
@@ -124,8 +133,8 @@
               </div>
               <div class="col-xs-6">
                 <select class="form-control" id="q7">
-                  <option value="1">Totes Agree</option>
-                  <option value="2">Agree-ish</option>
+                  <option value="1">What is this, a joke? YAH DUH</option>
+                  <option value="2">Moderately strongish with a touch of yes-ish</option>
                   <option value="3">Eh, you know?</option>
                   <option value="4">Pretty much no, not really. Maybe kinda sometimes.</option>
                   <option value="5">Super Ultra, don't even get me started, nope</option>
@@ -138,8 +147,8 @@
               </div>
               <div class="col-xs-6">
                 <select class="form-control" id="q8">
-                  <option value="1">Totes Agree</option>
-                  <option value="2">Agree-ish</option>
+                  <option value="1">What is this, a joke? YAH DUH</option>
+                  <option value="2">Moderately strongish with a touch of yes-ish</option>
                   <option value="3">Eh, you know?</option>
                   <option value="4">Pretty much no, not really. Maybe kinda sometimes.</option>
                   <option value="5">Super Ultra, don't even get me started, nope</option>
@@ -151,7 +160,7 @@
             <button type="submit" class="btn">Your Future Awaits!</button>
           </div>
 
-          <h3>The website will refresh 20 seconds after pressing the button! You'd better hurry and click the link that you receive!</h3>
+          <h3 class="text-center">The website will refresh 20 seconds after pressing the button! You'd better hurry and click the link that you receive!</h3>
         </form>
   <!-- END FORM -->
   <!-- BEGIN OUTPUT -->
@@ -163,12 +172,13 @@
               <p class="text-center">GRATS!</p>
               <p>You scored a perfect <span id="quizResult"></span>/<span id="quizResult"></span> and, <span id="personalOutput"></span></p>
               <ul>
-                <li id="result1"><a href="https://www.epicodus.com/css" target="_blank"><img src="img/cssLogo.gif" alt="CSS"></a><a href="https://www.epicodus.com/design" target="_blank"><img src="img/designLogo.jpeg" alt="DESIGN"></a></li>
-                <li id="result2"><a href="https://www.epicodus.com/java" target="_blank"><img src="img/javaLogo.png" alt="JAVA"><img src="img/androidLogo.jpeg" alt="ANDROID"></a></li>
-                <li id="result3"><a href="https://www.epicodus.com/ruby" target="_blank"><img src="img/rubyLogo.jpeg" alt="RUBY"><img src="img/railsLogo.jpeg" alt="RAILS"></a></li>
-                <li id="result4"><a href="https://www.epicodus.com/php" target="_blank"><img src="img/phpLogo.png" alt="PHP"><img src="img/drupalLogo.png" alt="DRUPAL"></a></li>
-                <li id="result5"><a href="https://www.epicodus.com/c-sharp" target="_blank"><img src="img/cSharpLogo.jpeg" alt="C#"><img src="img/dotNetLogo.svg" alt=".NET"></a></li>
+                <li id="result1" class="result"><a href="https://www.epicodus.com/css" target="_blank"><img src="img/cssLogo.gif" alt="CSS"></a><a href="https://www.epicodus.com/design" target="_blank"><img src="img/designLogo.jpeg" alt="DESIGN"></a></li>
+                <li id="result2" class="result"><a href="https://www.epicodus.com/java" target="_blank"><img src="img/javaLogo.png" alt="JAVA"><img src="img/androidLogo.jpeg" alt="ANDROID"></a></li>
+                <li id="result3" class="result"><a href="https://www.epicodus.com/ruby" target="_blank"><img src="img/rubyLogo.jpeg" alt="RUBY"><img src="img/railsLogo.jpeg" alt="RAILS"></a></li>
+                <li id="result4" class="result"><a href="https://www.epicodus.com/php" target="_blank"><img src="img/phpLogo.png" alt="PHP"><img src="img/drupalLogo.png" alt="DRUPAL"></a></li>
+                <li id="result5" class="result"><a href="https://www.epicodus.com/c-sharp" target="_blank"><img src="img/cSharpLogo.jpeg" alt="C#"><img src="img/dotNetLogo.svg" alt=".NET"></a></li>
               </ul>
+              <p class="text-center"><span id="cityOutput"></span></p>
             </div>
           </div>
           <div class="col-xs-3">
@@ -178,7 +188,7 @@
 <!-- END OUTPUT -->
 <!-- FOOTER -->
       <footer>
-        <p>This super accurate quiz is brought to you by the famous clickbait artist <a href="https://github.com/GrapeSalad" target="_blank">BzFd</a></p>
+        <p>This super accurate quiz is brought to you by the famous clickbait artist <a href="https://github.com/GrapeSalad" target="_blank">GrapeSalad</a></p>
       </footer>
     </div>
   </body>
