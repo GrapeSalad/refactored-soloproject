@@ -1,10 +1,14 @@
 //Business logic
-
+var quizTotal = function(q1Answer, q2Answer, q3Answer, q4Answer, q5Answer, q6Answer, q7Answer, q8Answer) {
+  return (q1Answer + q2Answer + q3Answer + q4Answer + q5Answer + q6Answer + q7Answer + q8Answer);
+};
 
 //UI logic
 $(document).ready(function() {
   $(document).submit(function(event) {
     event.preventDefault();
+
+//INPUT
     var firstName = $("input#firstName").val();
     var lastName = $("input#lastName").val();
     var q1Answer = parseInt($("select#q1").val());
@@ -16,6 +20,10 @@ $(document).ready(function() {
     var q7Answer = parseInt($("select#q7").val());
     var q8Answer = parseInt($("select#q8").val());
 
+    var result = quizTotal(q1Answer, q2Answer, q3Answer, q4Answer, q5Answer, q6Answer, q7Answer, q8Answer);
+
+//OUTPUT
+    $("#output").text("Well, " + firstName + " " + lastName + ", it looks like you have to pursue:");
 //ERROR CHECKING
     // console.log(firstName + " " + lastName, typeof(firstName));
     // console.log(q1Answer, typeof(q1Answer));
@@ -26,5 +34,6 @@ $(document).ready(function() {
     // console.log(q6Answer, typeof(q6Answer));
     // console.log(q7Answer, typeof(q7Answer));
     // console.log(q8Answer, typeof(q8Answer));
+    console.log(result, typeof(result));
   });
 });
