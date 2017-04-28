@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url("../img/leafyBG.jpg") no-repeat center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+h1 {
+  margin: 0 auto;
+  padding: 10px 20px;
+  height: auto;
+  width: 600px;
+  background-color: rgba(255, 223, 179, 0.7);
+  text-align: center;
+  border-width: 0 3px 3px;
+  border-style: solid;
+  border-color: #BEFFAB;
+  border-radius: 0 0 20px 20px;
+}
+
+.mainContent {
+  margin: 100px 50px;
+  padding: 10px 15px;
+  height: auto;
+  width: auto;
+  border-radius: 10px;
+  background-color: rgba(226, 232, 144, 0.7);
+}
+
+button.btn {
+  margin: 10px 45% 0;
+}
+
+#output {
+  border: 1px solid red;
+  
+}
+
+
+/********** FOOTER  ************/
+footer {
+	margin: 0 auto;
+  padding: 15px 0 0;
+  height: auto;
+  width: 600px;
+	font-weight: bold;
+	text-align: center;
+	background-color: rgba(255, 223, 179, 0.7);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  border-width: 3px 3px 0;
+  border-style: solid;
+  border-color: #BEFFAB;
+  border-radius: 20px 20px 0 0;
+}
+/********** REFERENCED BY JQUERY ************/
+#result1, #result2, #result3, #result4, #result5 {
+  display: none;
+}

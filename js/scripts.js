@@ -3,37 +3,15 @@ var quizTotal = function(q1Answer, q2Answer, q3Answer, q4Answer, q5Answer, q6Ans
   return (q1Answer + q2Answer + q3Answer + q4Answer + q5Answer + q6Answer + q7Answer + q8Answer);
 };
 
-// var chosenPath = function() {
-//   if (quizTotal >= 8 || quizTotal <= 40){
-//     console.log("first if working");
-//     if (quizTotal >= 8 && quizTotal <= 14) {
-//       var pathValue = 1;
-//       return pathValue;
-//     }
-//     else if (quizTotal >= 15 && quizTotal <= 21) {
-//       var pathValue = 2;
-//       return pathValue;
-//     }
-//     else if (quizTotal >= 22 && quizTotal <= 28) {
-//       var pathValue = 3;
-//       return pathValue;
-//     }
-//     else if (quizTotal >= 29 && quizTotal <= 34) {
-//       var pathValue = 4;
-//       return pathValue;
-//     }
-//     else {
-//       var pathValue = 5;
-//       return pathValue;
-//       console.log("Stuck in branching");
-//     }
-//   }
-// };
-
 //UI logic
 $(document).ready(function() {
   $(document).submit(function(event) {
     event.preventDefault();
+    $("#result1").hide();
+    $("#result2").hide();
+    $("#result3").hide();
+    $("#result4").hide();
+    $("#result5").hide();
 
 //INPUT
     var firstName = $("input#firstName").val();
@@ -52,24 +30,25 @@ $(document).ready(function() {
     var chosenPath = result;
 
     if (chosenPath >= 8 && chosenPath <= 14) {
-      console.log("chosenPath first if ", chosenPath);
+      $("#result1").show();
     }
     else if (chosenPath >= 15 && chosenPath <= 21){
-      console.log("chosenPath first branch ", chosenPath);
+      $("#result2").show();
     }
     else if (chosenPath >= 22 && chosenPath <= 28){
-      console.log("chosenPath second branch ", chosenPath);
+      $("#result3").show();
     }
     else if (chosenPath >= 29 && chosenPath <= 34){
-      console.log("chosenPath third branch ", chosenPath);
+      $("#result4").show();
     }
     else {
-      console.log("else end ", chosenPath);
+      $("#result5").show();
     }
 
 
 //OUTPUT
-    $("#output").text("Well, " + firstName + " " + lastName + ", it looks like you have to pursue: " + chosenPath);
+    $("span#personalOutput").text("Well, " + firstName + " " + lastName + ", it looks like you have to pursue: ");
+    $("span#quizResult").text(result);
 
 //ERROR CHECKING
     // console.log(firstName + " " + lastName, typeof(firstName));
