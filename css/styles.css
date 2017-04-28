@@ -4,6 +4,11 @@ body {
   background: url("../img/leafyBG.jpg") no-repeat center;
   background-attachment: fixed;
   background-size: cover;
+  font-family: serif;
+}
+
+.mainContent p, li {
+  font-size: 2em;
 }
 
 h1 {
@@ -26,17 +31,28 @@ h1 {
   width: auto;
   border-radius: 10px;
   background-color: rgba(226, 232, 144, 0.7);
+  border-width: 3px;
+  border-style: solid;
+  border-color: #BEFFAB;
+  border-radius: 20px;
 }
 
 button.btn {
   margin: 10px 45% 0;
 }
 
-#output {
-  border: 1px solid red;
-  
+#submitBtn {
+  visibility: visible;
 }
 
+#output {
+  padding: 5px;
+  background-color: rgba(144, 232, 177, 0.8);
+}
+
+li {
+  list-style: none;
+}
 
 /********** FOOTER  ************/
 footer {
@@ -57,7 +73,21 @@ footer {
   border-color: #BEFFAB;
   border-radius: 20px 20px 0 0;
 }
+
 /********** REFERENCED BY JQUERY ************/
 #result1, #result2, #result3, #result4, #result5 {
   display: none;
+}
+
+@keyframes color-strobe {
+	0% {border: 5px solid #BEFFAB;}
+	50% {border: 5px solid #90E8B1;}
+	100% {border: 5px solid #BEFFAB;}
+}
+
+.strobe {
+	animation-name: color-strobe;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+  border-radius: 20px;
 }

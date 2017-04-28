@@ -5,13 +5,17 @@ var quizTotal = function(q1Answer, q2Answer, q3Answer, q4Answer, q5Answer, q6Ans
 
 //UI logic
 $(document).ready(function() {
+  $("div#output").hide();
   $(document).submit(function(event) {
     event.preventDefault();
+    $("div#output").slideDown();
     $("#result1").hide();
     $("#result2").hide();
     $("#result3").hide();
     $("#result4").hide();
     $("#result5").hide();
+    $("#submitBtn").hide();
+    $("#output").addClass("strobe");
 
 //INPUT
     var firstName = $("input#firstName").val();
@@ -47,7 +51,7 @@ $(document).ready(function() {
 
 
 //OUTPUT
-    $("span#personalOutput").text("Well, " + firstName + " " + lastName + ", it looks like you have to pursue: ");
+    $("span#personalOutput").text(firstName + " " + lastName + ", it looks like you should pursue: ");
     $("span#quizResult").text(result);
 
 //ERROR CHECKING
@@ -60,6 +64,11 @@ $(document).ready(function() {
     // console.log(q6Answer, typeof(q6Answer));
     // console.log(q7Answer, typeof(q7Answer));
     // console.log(q8Answer, typeof(q8Answer));
-    console.log("Total points from quiz: ", result, typeof(result));
+    // console.log("Total points from quiz: ", result, typeof(result));
+//Trying something new with reloading page
+    setTimeout(function() {
+      location.reload();
+    }, 15000);
   });
+
 });
