@@ -1,7 +1,4 @@
 //BUSINESS LOGIC
-var quizTotal = function(q1Answer, q2Answer, q3Answer, q4Answer, q5Answer, q6Answer, q7Answer, q8Answer) {
-  return (q1Answer + q2Answer + q3Answer + q4Answer + q5Answer + q6Answer + q7Answer + q8Answer);
-};
 
 //UI lOGIC
 $(document).ready(function() {
@@ -10,27 +7,50 @@ $(document).ready(function() {
     event.preventDefault();
     $("div#output").slideDown();
     $(".result").hide();
-    $("#submitBtn").hide();
+    // $("#submitBtn").hide();
     $("#output").addClass("strobe");
 
 //INPUT
-    var firstName = $("input#firstName").val();
-    var lastName = $("input#lastName").val();
-    var userHome = $("input#city").val().toLowerCase();
-    var q1Answer = parseInt($("select#q1").val());
-    var q2Answer = parseInt($("select#q2").val());
-    var q3Answer = parseInt($("select#q3").val());
-    var q4Answer = parseInt($("select#q4").val());
-    var q5Answer = parseInt($("select#q5").val());
-    var q6Answer = parseInt($("select#q6").val());
-    var q7Answer = parseInt($("select#q7").val());
-    var q8Answer = parseInt($("select#q8").val());
+    // var firstName = $("input#firstName").val();
+    // var lastName = $("input#lastName").val();
+    // var userHome = $("input#city").val().toLowerCase();
 
-    var result = quizTotal(q1Answer, q2Answer, q3Answer, q4Answer, q5Answer, q6Answer, q7Answer, q8Answer);
+    var quizResults = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"];
 
+    var userInfo = ["firstName", "lastName", "city"];
+
+    console.log(userInfo[0]);
+
+    var result = 0;
+    quizResults.forEach(function(quizResult) {
+      var userInput = parseInt($("select#" + quizResult).val());
+      $(".quizResult").text(result);
+
+      result += userInput;
+      // console.log(result);
+    });
+
+    var userArray = [];
+
+    userInfo.forEach(function(info){
+      var user = $("input#" + info).val().toLowerCase();
+      userArray.push(user);
+    });
+
+    $("span#personalOutput").text(userArray[0].substring(0,1).toUpperCase() + userArray[0].substring(1) + " " + userArray[1].substring(0,1).toUpperCase() + userArray[1].substring(1) + ", it looks like you should pursue: ");
+    console.log(userArray[2]);
+    if(userArray[2] === "portland" || userArray[2] === "seattle"){
+      console.log("true")
+        $("span#cityOutput").text("You will not have to commute far!");
+    } else {
+      console.log("false");
+      $("span#cityOutput").text("You may have to move or commute quite a ways in order to attend class.");
+    }
+
+//
     var chosenPath = result;
 //SHOW RESULT BASED ON USER POINTS
-    if (chosenPath >= 8 && chosenPath <= 14) {
+    if (chosenPath >= 7 && chosenPath <= 14) {
       $("#result1").show();
     }
     else if (chosenPath >= 15 && chosenPath <= 21){
@@ -46,16 +66,11 @@ $(document).ready(function() {
       $("#result5").show();
     }
 //SHOW IF COURSES ARE AVAILABLE NEAR USER
-    if (userHome === "portland" || userHome === "seattle") {
-      $("span#cityOutput").text("You will not have to commute far!");
-    }
-    else {
-      $("span#cityOutput").text("You may have to move or commute quite a ways in order to attend class.");
-    }
+
 
 //OUTPUT
-    $("span#personalOutput").text(firstName + " " + lastName + ", it looks like you should pursue: ");
-    $("span#quizResult").text(result);
+
+
 
 //ERROR CHECKING
     // console.log(firstName + " " + lastName, typeof(firstName));
@@ -63,9 +78,9 @@ $(document).ready(function() {
     // console.log(q1Answer, typeof(q1Answer));
     // console.log("Total points from quiz: ", result, typeof(result));
 //Trying something new with reloading page
-    setTimeout(function() {
-      location.reload();
-    }, 15000);
+    // setTimeout(function() {
+    //   location.reload();
+    // }, 15000);
   });
 
 });
